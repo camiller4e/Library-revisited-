@@ -8,6 +8,7 @@ public class Library {
 
     public Library(String name, int capacity){
         this.name = name;
+        this.capacity =  capacity;
         this.collection = new ArrayList<Book>();
     }
 
@@ -16,6 +17,8 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        this.collection.add(book);
+        if (this.bookCount() < this.capacity) {
+            this.collection.add(book);
+        }
     }
 }
